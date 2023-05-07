@@ -1,0 +1,46 @@
+﻿<Page x:Class="Мухутдинов.NewFolder1.VidizdaniePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Мухутдинов.NewFolder1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Вид издания" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer>
+            <StackPanel Background="AntiqueWhite">
+                <TextBlock Width="134" Height="17"><Run Text="Поиск по вид изданию:"/></TextBlock>
+                <TextBox x:Name="VidizdanieNameSearchField" Width="199" Margin="0,0,15,0"/>
+                <Button x:Name="VidizdanieSearchButton" Click="VidizdanieSearchButton_Click" Width="80" Content="Поиск"/>
+                <DataGrid x:Name="VidizdanieDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" DataGridCell.Selected="VidizdanieDataGrid_Selected">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id"  x:Name="VidizdanieidColumn" Visibility="Collapsed" Binding="{Binding id, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="Вид издания" x:Name="VidizdanieVidizdanieColumn" Width="2*" Binding="{Binding Vidizdanie, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="19,140,0,0" FontSize="15" VerticalAlignment="Top" Width="110" Click="Button_Click_2" Grid.Column="1" Height="39"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+        </StackPanel>
+        <Button x:Name ="VidizdanieTable" Content="Обновить" Grid.Column="1" HorizontalAlignment="Left" Margin="19,99,0,0" FontSize="20"  VerticalAlignment="Top" Width="110" Click="VidizdanieTable_Click" Height="36"/>
+        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="134,99,0,0" FontSize="20"  VerticalAlignment="Top" Width="102" Click="Button_Click" Height="36"/>
+        <Button Content="Изменить"  HorizontalAlignment="Left" Margin="134,140,0,0" FontSize="20" VerticalAlignment="Top" Width="102" Click="Button_Click_1" Grid.Column="1" Height="39" />
+        <Button Click="ButtonDelete_Click" Name="buttonDelete" Content="Удалить" HorizontalAlignment="Left" Margin="134,184,0,0" VerticalAlignment="Top" Width="102" Grid.Column="1" Height="30" FontSize="20"/>
+        <Label Content="Номер издания:" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Width="97" Height="26" Grid.Column="1"/>
+        <TextBox Name="idizdanieyaField" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="102,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Вид издания:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="VidizdanieyaField" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="97,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+
+
+    </Grid>
+</Page>

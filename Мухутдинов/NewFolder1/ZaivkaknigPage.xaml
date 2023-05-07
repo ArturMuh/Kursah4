@@ -1,0 +1,33 @@
+﻿<Page x:Class="Мухутдинов.NewFolder1.ZaivkaknigPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Мухутдинов.NewFolder1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ZaivkaknigPage">
+
+    <Grid Background="AntiqueWhite">
+        <Label Content="&lt;Avtory&gt;" HorizontalAlignment="Left" Margin="29,71,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Nazvanieknigi&gt;" HorizontalAlignment="Left" Margin="29,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Godizdanie&gt;" HorizontalAlignment="Left" Margin="29,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Mesto&gt;" HorizontalAlignment="Left" Margin="29,164,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Tom&gt;" HorizontalAlignment="Left" Margin="29,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Stranisa&gt;" HorizontalAlignment="Left" Margin="29,226,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;FIO&gt;" HorizontalAlignment="Left" Margin="40,257,0,0" VerticalAlignment="Top"/>
+        <Label Content="&lt;Email&gt;" HorizontalAlignment="Left" Margin="35,288,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="90,75,0,0" TextWrapping="Wrap" Text="Иванов Петр Иванович" VerticalAlignment="Top" Width="147"/>
+        <TextBox Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="126,106,0,0" TextWrapping="Wrap" Text="Русский язык" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="115,137,0,0" TextWrapping="Wrap" Text="2020" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="89,167,0,0" TextWrapping="Wrap" Text="Нефтекамск" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="89,198,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="90,229,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="90,260,0,0" TextWrapping="Wrap" Text="Иванов Иван Петрович" VerticalAlignment="Top" Width="141"/>
+        <TextBox Name="textBox8" HorizontalAlignment="Left" Height="23" Margin="90,291,0,0" TextWrapping="Wrap" Text="Ivanov@mail.ru" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Экпорт в Word" HorizontalAlignment="Left" Margin="89,325,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
+        <Label Content="Сформировать заявку" HorizontalAlignment="Left" Margin="384,30,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Page>

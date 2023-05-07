@@ -1,0 +1,56 @@
+﻿<Page x:Class="Мухутдинов.NewFolder1.PostavchikPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:local="clr-namespace:Мухутдинов.NewFolder1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Поставщик" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer>
+            <StackPanel Background="AntiqueWhite">
+                <TextBlock Width="134" Height="17"><Run Text="Название поставщика:"/></TextBlock>
+                <TextBox x:Name="PostavchikNameSearchField" Width="199" Margin="0,0,15,0"/>
+                <Button x:Name="PostavchikSearchButton" Click="PostavchikSearchButton_Click" Width="80" Content="Поиск"/>
+                <DataGrid x:Name="PostavshikDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" DataGridCell.Selected="PostavshikDataGrid_Selected">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID_postavshika"  x:Name="PostavchikID_postavshikaColumn" Visibility="Collapsed" Binding="{Binding ID_postavshika, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="Название" x:Name="PostavchikNazvanieColumn" Width="2*" Binding="{Binding Nazvanie, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="Адрес" x:Name="PostavchikAdressColumn" Width="2*" Binding="{Binding Adress, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="Телефон" x:Name="PostavchikTelefonColumn" Width="2*" Binding="{Binding Telefon, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="Email" x:Name="PostavchikEmailColumn" Width="2*" Binding="{Binding Email, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Content="Экспорт в Excel" HorizontalAlignment="Left" Margin="21,211,0,0" FontSize="15" VerticalAlignment="Top" Width="113" Click="Button_Click" Grid.Column="1" Height="35" RenderTransformOrigin="0.327,0.106"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+        </StackPanel>
+        <Button x:Name ="PostavchikTable" Content="Обновить" Grid.Column="1" HorizontalAlignment="Left" Margin="21,170,0,0" FontSize="20"  VerticalAlignment="Top" Width="113" Click="PostavchikTable_Click" Height="36"/>
+        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="142,170,0,0" FontSize="20"  VerticalAlignment="Top" Width="110" Click="Button_Click_1" Height="36"/>
+        <Button Content="Изменить"  HorizontalAlignment="Left" Margin="142,211,0,0" FontSize="20" VerticalAlignment="Top" Width="110" Click="Button_Click_2" Grid.Column="1" Height="35" />
+        <Label Content="ID поставщика:" Grid.Column="1" HorizontalAlignment="Left" Margin="5,27,0,0" VerticalAlignment="Top" Width="92" Height="26"/>
+        <TextBox Name="IDpostavshikayaField" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="102,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Название:" Grid.Column="1" HorizontalAlignment="Left" Margin="5,58,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="NazvanieyaField" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="102,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Адрес:" Grid.Column="1" HorizontalAlignment="Left" Margin="5,89,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="AdressField" Grid.Column="1" HorizontalAlignment="Left" Margin="102,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" Height="22"/>
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="5,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.578" Grid.Column="1"/>
+        <xctk:MaskedTextBox Name="maskedtextboxPhoneNumber" Mask="+7(000)-000-00-00" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,123,0,0" Width="150"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.578" Grid.Column="1"/>
+        <xctk:MaskedTextBox Name="maskedtextboxEmailNumber" Mask="?????????????@????/??" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,148,0,0" Width="150"/>
+        <Button x:Name="Delete" Content="Удалить"  HorizontalAlignment="Left" Margin="21,251,0,0" FontSize="20" VerticalAlignment="Top" Width="113" Click="Delete_Click" Grid.Column="1" Height="35" />
+
+
+    </Grid>
+</Page>

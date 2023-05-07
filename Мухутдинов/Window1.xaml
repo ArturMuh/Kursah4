@@ -1,0 +1,46 @@
+﻿<Window x:Class="Мухутдинов.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Мухутдинов"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="450" Width="700" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint = "0.5,1" StartPoint = "0.5,0">
+                <GradientStop Color = "#FF00ABB4" Offset = "0"/>
+                <GradientStop Color = "#FF6991E6" Offset = "1"/>
+                <GradientStop Color = "#FF35D360" Offset = "0.421"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <Label Content="Логин:" HorizontalAlignment="Left" Margin="186,129,0,0" VerticalAlignment="Top" Height="30" Width="48" RenderTransformOrigin="1.315,1.48">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.712"/>
+                    <TranslateTransform X="0.363" Y="-0.602"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button Content="Вход" HorizontalAlignment="Left" Margin="236,218,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click" Height="31"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="276,165,0,0" VerticalAlignment="Top" Name="PasswordField"  Width="132" Password="123456" Visibility="Visible"/>
+        <TextBox HorizontalAlignment="Left" Margin="275,163,0,0" VerticalAlignment="Top" Name="PasswordShowField"  Width="132" Text="123456" Visibility="Collapsed"/>
+        <Label Content="Пароль:" HorizontalAlignment="Left" Margin="186,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.192,0.345"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="274,129,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Name="LoginField" Text="Artur" Width="136"></TextBox>
+        <Label Content="Авторизация" Margin="263,74,124,295" FontSize="24" RenderTransformOrigin="0.633,0.589"/>
+        <CheckBox x:Name="chkbxShowPass" Content="Показать пароль" HorizontalAlignment="Left" Margin="275,194,0,0" VerticalAlignment="Top"  BorderThickness="0" Click='chkbxShowPass_Click'/>
+        <Image Source="/RIS.png" VerticalAlignment="Top" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="293,10,171,0" RenderTransformOrigin="0.511,0.059" Height="79"/>
+        <Image x:Name="Hearderliso" Source="/1.jpg" HorizontalAlignment="Left" Height="46" Margin="228,114,0,0" VerticalAlignment="Top" Width="52"/>
+        <Image x:Name="HearderPassword" Source="/password.png" HorizontalAlignment="Left" Height="31" Margin="240,160,0,0" VerticalAlignment="Top" Width="35"/>
+        <Button Content="Справка" HorizontalAlignment="Left" Margin="325,218,0,0" VerticalAlignment="Top" Height="31" Width="75" Click="OpenHelpButton_Click"/>
+
+    </Grid>
+</Window>

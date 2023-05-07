@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf241eb09b884ea8a56e3f659b2260ac" Name="Diagram1">
+        <EntityTypeShape EntityType="Post_BiblioModel.Avtory" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Biblioteka" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Izdatelstvo" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Knigi" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Postavshik" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Razdeli" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Sostav_zakaza" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Vid_izdanie" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Post_BiblioModel.Zakaz" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Knigi_Avtory" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Knigi_Izdatelstvo" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Knigi_Razdeli" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Knigi_Vid_izdanie" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Sostav_zakaza_Knigi" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Zakaz_Postavshik" ManuallyRouted="false" />
+        <AssociationConnector Association="Post_BiblioModel.FK_Sostav_zakaza_Zakaz" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

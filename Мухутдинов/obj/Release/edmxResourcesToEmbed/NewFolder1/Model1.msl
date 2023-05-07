@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Post_BiblioModelContainer" CdmEntityContainer="Post_BiblioEntities6">
+    <EntitySetMapping Name="Avtory">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Avtory">
+        <MappingFragment StoreEntitySet="Avtory">
+          <ScalarProperty Name="ID_avtory" ColumnName="ID_avtory" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Biblioteka">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Biblioteka">
+        <MappingFragment StoreEntitySet="Biblioteka">
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdatelstvo">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Izdatelstvo">
+        <MappingFragment StoreEntitySet="Izdatelstvo">
+          <ScalarProperty Name="ID_izdatelstva" ColumnName="ID_izdatelstva" />
+          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knigi">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Knigi">
+        <MappingFragment StoreEntitySet="Knigi">
+          <ScalarProperty Name="ID_knigi" ColumnName="ID_knigi" />
+          <ScalarProperty Name="Nazvanie_knigi" ColumnName="Nazvanie_knigi" />
+          <ScalarProperty Name="Nameavtory" ColumnName="Nameavtory" />
+          <ScalarProperty Name="Razdel" ColumnName="Razdel" />
+          <ScalarProperty Name="ID_razdela" ColumnName="ID_razdela" />
+          <ScalarProperty Name="ID_avtory" ColumnName="ID_avtory" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ID_izdatelstva" ColumnName="ID_izdatelstva" />
+          <ScalarProperty Name="Vidizdanie" ColumnName="Vidizdanie" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="Izdatelstvo" ColumnName="Izdatelstvo" />
+          <ScalarProperty Name="Kolichestvo" ColumnName="Kolichestvo" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Date_postavki" ColumnName="Date_postavki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postavshik">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Postavshik">
+        <MappingFragment StoreEntitySet="Postavshik">
+          <ScalarProperty Name="ID_postavshika" ColumnName="ID_postavshika" />
+          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Razdeli">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Razdeli">
+        <MappingFragment StoreEntitySet="Razdeli">
+          <ScalarProperty Name="ID_razdela" ColumnName="ID_razdela" />
+          <ScalarProperty Name="Razdel" ColumnName="Razdel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sostav_zakaza">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Sostav_zakaza">
+        <MappingFragment StoreEntitySet="Sostav_zakaza">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazvanie_knigi" ColumnName="Nazvanie_knigi" />
+          <ScalarProperty Name="ID_zakaza" ColumnName="ID_zakaza" />
+          <ScalarProperty Name="ID_knigi" ColumnName="ID_knigi" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Kolichestvo" ColumnName="Kolichestvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vid_izdanie">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Vid_izdanie">
+        <MappingFragment StoreEntitySet="Vid_izdanie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Vidizdanie" ColumnName="Vidizdanie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakaz">
+      <EntityTypeMapping TypeName="Post_BiblioModel.Zakaz">
+        <MappingFragment StoreEntitySet="Zakaz">
+          <ScalarProperty Name="ID_zakaza" ColumnName="ID_zakaza" />
+          <ScalarProperty Name="Nazvanie_knigi" ColumnName="Nazvanie_knigi" />
+          <ScalarProperty Name="Date_zakaza" ColumnName="Date_zakaza" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Kolichestvo" ColumnName="Kolichestvo" />
+          <ScalarProperty Name="ID_postavshika" ColumnName="ID_postavshika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

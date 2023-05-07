@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Post_BiblioModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Avtory">
+    <Key>
+      <PropertyRef Name="ID_avtory" />
+    </Key>
+    <Property Name="ID_avtory" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Biblioteka">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="100" />
+    <Property Name="Login" Type="nvarchar" MaxLength="10" />
+    <Property Name="Password" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Izdatelstvo">
+    <Key>
+      <PropertyRef Name="ID_izdatelstva" />
+    </Key>
+    <Property Name="ID_izdatelstva" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Knigi">
+    <Key>
+      <PropertyRef Name="ID_knigi" />
+    </Key>
+    <Property Name="ID_knigi" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_knigi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nameavtory" Type="nvarchar" MaxLength="100" />
+    <Property Name="Razdel" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_razdela" Type="bigint" />
+    <Property Name="ID_avtory" Type="bigint" />
+    <Property Name="id" Type="bigint" />
+    <Property Name="ID_izdatelstva" Type="bigint" />
+    <Property Name="Vidizdanie" Type="nvarchar" MaxLength="100" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="100" />
+    <Property Name="Izdatelstvo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Kolichestvo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_postavki" Type="date" />
+  </EntityType>
+  <EntityType Name="Postavshik">
+    <Key>
+      <PropertyRef Name="ID_postavshika" />
+    </Key>
+    <Property Name="ID_postavshika" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie" Type="nvarchar" MaxLength="100" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="17" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Razdeli">
+    <Key>
+      <PropertyRef Name="ID_razdela" />
+    </Key>
+    <Property Name="ID_razdela" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Razdel" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sostav_zakaza">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_knigi" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_zakaza" Type="bigint" />
+    <Property Name="ID_knigi" Type="bigint" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kolichestvo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Vid_izdanie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vidizdanie" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Zakaz">
+    <Key>
+      <PropertyRef Name="ID_zakaza" />
+    </Key>
+    <Property Name="ID_zakaza" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_knigi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_zakaza" Type="date" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kolichestvo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_postavshika" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_Knigi_Avtory">
+    <End Role="Avtory" Type="Self.Avtory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Knigi" Type="Self.Knigi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avtory">
+        <PropertyRef Name="ID_avtory" />
+      </Principal>
+      <Dependent Role="Knigi">
+        <PropertyRef Name="ID_avtory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knigi_Izdatelstvo">
+    <End Role="Izdatelstvo" Type="Self.Izdatelstvo" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Knigi" Type="Self.Knigi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdatelstvo">
+        <PropertyRef Name="ID_izdatelstva" />
+      </Principal>
+      <Dependent Role="Knigi">
+        <PropertyRef Name="ID_izdatelstva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knigi_Razdeli">
+    <End Role="Razdeli" Type="Self.Razdeli" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Knigi" Type="Self.Knigi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Razdeli">
+        <PropertyRef Name="ID_razdela" />
+      </Principal>
+      <Dependent Role="Knigi">
+        <PropertyRef Name="ID_razdela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knigi_Vid_izdanie">
+    <End Role="Vid_izdanie" Type="Self.Vid_izdanie" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Knigi" Type="Self.Knigi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vid_izdanie">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Knigi">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sostav_zakaza_Knigi">
+    <End Role="Knigi" Type="Self.Knigi" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sostav_zakaza" Type="Self.Sostav_zakaza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knigi">
+        <PropertyRef Name="ID_knigi" />
+      </Principal>
+      <Dependent Role="Sostav_zakaza">
+        <PropertyRef Name="ID_knigi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sostav_zakaza_Zakaz">
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sostav_zakaza" Type="Self.Sostav_zakaza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zakaz">
+        <PropertyRef Name="ID_zakaza" />
+      </Principal>
+      <Dependent Role="Sostav_zakaza">
+        <PropertyRef Name="ID_zakaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zakaz_Postavshik">
+    <End Role="Postavshik" Type="Self.Postavshik" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postavshik">
+        <PropertyRef Name="ID_postavshika" />
+      </Principal>
+      <Dependent Role="Zakaz">
+        <PropertyRef Name="ID_postavshika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Post_BiblioModelContainer">
+    <EntitySet Name="Avtory" EntityType="Self.Avtory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Biblioteka" EntityType="Self.Biblioteka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Izdatelstvo" EntityType="Self.Izdatelstvo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knigi" EntityType="Self.Knigi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Postavshik" EntityType="Self.Postavshik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Razdeli" EntityType="Self.Razdeli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sostav_zakaza" EntityType="Self.Sostav_zakaza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vid_izdanie" EntityType="Self.Vid_izdanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Knigi_Avtory" Association="Self.FK_Knigi_Avtory">
+      <End Role="Avtory" EntitySet="Avtory" />
+      <End Role="Knigi" EntitySet="Knigi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knigi_Izdatelstvo" Association="Self.FK_Knigi_Izdatelstvo">
+      <End Role="Izdatelstvo" EntitySet="Izdatelstvo" />
+      <End Role="Knigi" EntitySet="Knigi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knigi_Razdeli" Association="Self.FK_Knigi_Razdeli">
+      <End Role="Razdeli" EntitySet="Razdeli" />
+      <End Role="Knigi" EntitySet="Knigi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knigi_Vid_izdanie" Association="Self.FK_Knigi_Vid_izdanie">
+      <End Role="Vid_izdanie" EntitySet="Vid_izdanie" />
+      <End Role="Knigi" EntitySet="Knigi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sostav_zakaza_Knigi" Association="Self.FK_Sostav_zakaza_Knigi">
+      <End Role="Knigi" EntitySet="Knigi" />
+      <End Role="Sostav_zakaza" EntitySet="Sostav_zakaza" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sostav_zakaza_Zakaz" Association="Self.FK_Sostav_zakaza_Zakaz">
+      <End Role="Zakaz" EntitySet="Zakaz" />
+      <End Role="Sostav_zakaza" EntitySet="Sostav_zakaza" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zakaz_Postavshik" Association="Self.FK_Zakaz_Postavshik">
+      <End Role="Postavshik" EntitySet="Postavshik" />
+      <End Role="Zakaz" EntitySet="Zakaz" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
